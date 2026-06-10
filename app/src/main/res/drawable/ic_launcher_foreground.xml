@@ -1,0 +1,81 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- SIM Card Shadow -->
+    <path
+        android:pathData="M38,26 L60,26 L74,40 L74,78 C74,80.2 72.2,82 70,82 L38,82 C35.8,82 34,80.2 34,78 L34,30 C34,27.8 35.8,26 38,26 Z"
+        android:fillColor="#22000000" />
+
+    <!-- SIM Card Main Body (Sleek Slate-Lavender Gradient) -->
+    <path
+        android:pathData="M38,26 L60,26 L74,40 L74,78 C74,80.2 72.2,82 70,82 L38,82 C35.8,82 34,80.2 34,78 L34,30 C34,27.8 35.8,26 38,26 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:startX="34"
+                android:startY="26"
+                android:endX="74"
+                android:endY="82"
+                android:type="linear">
+                <item android:color="#FFFFFF" android:offset="0.0"/>
+                <item android:color="#E2DDFF" android:offset="1.0"/>
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- Metallic Chip Background (Golden Gradient) -->
+    <path
+        android:pathData="M44,38 L62,38 C63.1,38 64,38.9 64,40 L64,52 C64,53.1 63.1,54 62,54 L44,54 C42.9,54 42,53.1 42,52 L42,40 C42,38.9 42.9,38 44,38 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:startX="42"
+                android:startY="38"
+                android:endX="64"
+                android:endY="54"
+                android:type="linear">
+                <item android:color="#FFEAAA" android:offset="0.0"/>
+                <item android:color="#F5A323" android:offset="1.0"/>
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- Metallic Chip Grid Lines -->
+    <path
+        android:pathData="M48,38 L48,54 M58,38 L58,54 M42,46 L64,46 M53,38 L53,42 M53,50 L53,54"
+        android:strokeColor="#7A5005"
+        android:strokeWidth="0.8"
+        android:strokeLineCap="round" />
+
+    <!-- Keep-Alive Reminder Circle Background (Royal Brand Purple Accent) -->
+    <!-- Center: 72, Y: 70. Radius: 18 -->
+    <path
+        android:pathData="M72,52 C81.94,52 90,60.06 90,70 C90,79.94 81.94,88 72,88 C62.06,88 54,79.94 54,70 C54,60.06 62.06,52 72,52 Z"
+        android:fillColor="#7C69EF" />
+
+    <!-- Keep-Alive Clock Inner face shadow -->
+    <path
+        android:pathData="M72,55 C80.28,55 87,61.72 87,70 C87,78.28 80.28,85 72,85 C63.72,85 57,78.28 57,70 C57,61.72 63.72,55 72,55 Z"
+        android:fillColor="#120F24" />
+
+    <!-- Precise Clock hands (time reminder indicator) -->
+    <path
+        android:pathData="M72,70 L72,61 M72,70 L80,70"
+        android:strokeColor="#A8A1FF"
+        android:strokeWidth="2.5"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round" />
+
+    <!-- Center pivot dot of clock -->
+    <path
+        android:pathData="M72,69 C72.55,69 73,69.45 73,70 C73,70.55 72.55,71 72,71 C71.45,71 71,70.55 71,70 C71,69.45 71.45,69 72,69 Z"
+        android:fillColor="#FFFFFF" />
+
+    <!-- Active Status Indicator Dot (Healthy Neon Green) -->
+    <path
+        android:pathData="M72,58 C73.1,58 74,58.9 74,60 C74,61.1 73.1,62 72,62 C70.9,62 70,61.1 70,60 C70,58.9 70.9,58 72,58 Z"
+        android:fillColor="#16A34A" />
+
+</vector>
