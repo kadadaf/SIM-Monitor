@@ -50,6 +50,15 @@ fun DashboardScreen(
     val rules by viewModel.allRuleTemplates.collectAsStateWithLifecycle()
 
     var showReminderConfirmDialog by remember { mutableStateOf<String?>(null) }
+    var selectedFilter by remember { mutableStateOf("all") } // "all", "active", "risk"
+
+    val filteredSimCards = remember(simCards, selectedFilter) {
+        when (selectedFilter) {
+            "active" -> simCards.filter { it.status == "HEALTHY" }
+            "risk" -> simCards.filter { it.status == "RISK" || it.status == "ATTENTION" || it.status == "EXPIRED" }
+            else -> simCards
+        }
+    }
 
     Box(
         modifier = modifier
@@ -157,7 +166,7 @@ fun DashboardScreen(
                     backgroundColor = LightPurple,
                     contentColor = PrimaryPurple,
                     valueColor = Color(0xFF4B39C2),
-                    onClick = { onViewAllClick("active") },
+                    onClick = { selectedFilter = if (selectedFilter == "active") "all" else "active" },
                     modifier = Modifier.weight(1f)
                 )
 
@@ -169,7 +178,7 @@ fun DashboardScreen(
                     backgroundColor = RiskBackground,
                     contentColor = RiskRed,
                     valueColor = Color(0xFFB71C1C),
-                    onClick = { onViewAllClick("risk") },
+                    onClick = { selectedFilter = if (selectedFilter == "risk") "all" else "risk" },
                     modifier = Modifier.weight(1f)
                 )
             }
@@ -190,7 +199,13 @@ fun DashboardScreen(
                     letterSpacing = 1.sp
                 )
                 TextButton(
-                    onClick = { onViewAllClick("all") },
+                    onClick = {
+                        if (selectedFilter != "all") {
+                            selectedFilter = "all"
+                        } else {
+                            onViewAllClick("all")
+                        }
+                    },
                     colors = ButtonDefaults.textButtonColors(contentColor = PrimaryPurple)
                 ) {
                     Text(
@@ -204,7 +219,7 @@ fun DashboardScreen(
             Spacer(modifier = Modifier.height(8.dp))
 
             // 4. List of SIMs
-            if (simCards.isEmpty()) {
+            if (filteredSimCards.isEmpty()) {
                 Box(
                     modifier = Modifier
                         .weight(1f)
@@ -243,7 +258,7 @@ fun DashboardScreen(
                         .fillMaxWidth()
                 ) {
                     // Show top results
-                    items(simCards.take(5), key = { it.id }) { sim ->
+                    items(filteredSimCards.take(if (selectedFilter == "all") 5 else filteredSimCards.size), key = { it.id }) { sim ->
                         val rule = rules.find { it.id == sim.ruleId }
                         SimCardItem(
                             simCard = sim,
