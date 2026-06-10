@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SIM Monitor | SIM 保号管家</title>
+    <meta
+      name="description"
+      content="SIM Monitor 是一款用于管理多张 SIM 卡保号状态、余额、活跃记录和本地提醒的 Android 应用。"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="site-shell">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero__image" aria-hidden="true"></div>
+        <div class="hero__shade" aria-hidden="true"></div>
+
+        <nav class="topbar" aria-label="主导航">
+          <a class="brand" href="#hero-title">
+            <span class="brand__mark">SM</span>
+            <span>SIM Monitor</span>
+          </a>
+          <div class="navlinks">
+            <a href="#features">功能</a>
+            <a href="#workflow">流程</a>
+            <a href="https://github.com/kadadaf/SIM-Monitor">GitHub</a>
+          </div>
+        </nav>
+
+        <div class="hero__content">
+          <p class="eyebrow">SIM 保号管家 · Android App</p>
+          <h1 id="hero-title">SIM Monitor</h1>
+          <p class="hero__lead">
+            面向多张实体 SIM 卡的保号与余额管理工具。它把卡片信息、运营商规则、活跃记录和到期提醒组织在一起，让备用号码不再悄悄失效。
+          </p>
+          <div class="hero__actions" aria-label="主要操作">
+            <a class="button button--primary" href="https://github.com/kadadaf/SIM-Monitor">查看源码</a>
+            <a class="button button--secondary" href="#features">了解功能</a>
+          </div>
+          <dl class="hero__metrics" aria-label="产品重点">
+            <div>
+              <dt>24h</dt>
+              <dd>每日后台巡检</dd>
+            </div>
+            <div>
+              <dt>5</dt>
+              <dd>卡片状态分级</dd>
+            </div>
+            <div>
+              <dt>180</dt>
+              <dd>默认保号周期</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <section class="intro">
+        <p>
+          这是一个偏工具型的原生 Android 应用：不读取短信、不抓取通话记录、不自动查询运营商账户，而是用本地数据库和规则引擎帮用户清楚管理“什么时候需要做一次保号动作”。
+        </p>
+      </section>
+
+      <section class="section" id="features" aria-labelledby="features-title">
+        <div class="section__heading">
+          <p class="eyebrow">Core Features</p>
+          <h2 id="features-title">把 SIM 卡保号变成可见的日程</h2>
+        </div>
+        <div class="feature-grid">
+          <article class="feature-card">
+            <span class="feature-card__index">01</span>
+            <h3>多卡集中管理</h3>
+            <p>把海外卡、备用号、实体 SIM 和低频号码放进同一个视图，记录运营商、余额、币种、激活时间与备注。</p>
+          </article>
+          <article class="feature-card">
+            <span class="feature-card__index">02</span>
+            <h3>保号规则巡检</h3>
+            <p>根据 Giffgaff、CTExcel 或通用 180 天规则计算下一次保号动作，自动判断健康、关注、风险和过期状态。</p>
+          </article>
+          <article class="feature-card">
+            <span class="feature-card__index">03</span>
+            <h3>本地提醒</h3>
+            <p>后台每日检查卡片状态，在临近失效前通过 Android 本地通知提醒充值、发短信、拨打电话或使用流量。</p>
+          </article>
+          <article class="feature-card">
+            <span class="feature-card__index">04</span>
+            <h3>操作历史可追踪</h3>
+            <p>充值、短信、通话、流量、套餐购买和付费保号服务都能留下记录，后续查账和复盘更清楚。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="status-band" aria-labelledby="status-title">
+        <div>
+          <p class="eyebrow">Risk Model</p>
+          <h2 id="status-title">清楚知道哪张卡需要立刻处理</h2>
+          <p>
+            SIM Monitor 会基于绑定规则、最近活跃时间和用户记录生成状态，让多卡管理不再依赖记忆或零散备忘录。
+          </p>
+        </div>
+        <div class="status-list">
+          <article class="status-row">
+            <strong>HEALTHY</strong>
+            <span>状态健康，距离下一次保号动作仍有较长时间。</span>
+          </article>
+          <article class="status-row">
+            <strong>ATTENTION</strong>
+            <span>进入关注期，建议提前准备下一次保号动作。</span>
+          </article>
+          <article class="status-row">
+            <strong>RISK</strong>
+            <span>临近失效，需要尽快执行短信、通话或充值等动作。</span>
+          </article>
+          <article class="status-row">
+            <strong>EXPIRED</strong>
+            <span>规则判断已过期，需要立即核实实体卡状态。</span>
+          </article>
+        </div>
+      </section>
+
+      <section class="section workflow" id="workflow" aria-labelledby="workflow-title">
+        <div class="section__heading">
+          <p class="eyebrow">How It Works</p>
+          <h2 id="workflow-title">从录入到提醒，只保留必要步骤</h2>
+        </div>
+        <ol class="workflow-list">
+          <li>录入 SIM 卡基础信息和余额</li>
+          <li>绑定运营商或自定义保号规则</li>
+          <li>记录充值、短信、通话、流量等动作</li>
+          <li>每日后台巡检并生成提醒</li>
+        </ol>
+      </section>
+
+      <section class="tech-band" aria-labelledby="tech-title">
+        <div>
+          <p class="eyebrow">Build</p>
+          <h2 id="tech-title">Kotlin + Jetpack Compose 原生实现</h2>
+        </div>
+        <p>
+          项目使用 Room 保存 SIM 卡、规则、使用记录和提醒记录；DataStore 保存本地设置；WorkManager 执行每日巡检；Compose 和 Material 3 构建界面。
+        </p>
+      </section>
+    </main>
+  </body>
+</html>
