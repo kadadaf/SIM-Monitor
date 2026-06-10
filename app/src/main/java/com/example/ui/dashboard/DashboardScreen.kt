@@ -54,8 +54,8 @@ fun DashboardScreen(
 
     val filteredSimCards = remember(simCards, selectedFilter) {
         when (selectedFilter) {
-            "active" -> simCards.filter { it.status == "HEALTHY" }
-            "risk" -> simCards.filter { it.status == "RISK" || it.status == "ATTENTION" || it.status == "EXPIRED" }
+            "active" -> simCards.filter { it.status == "HEALTHY" || it.status == "ATTENTION" }
+            "risk" -> simCards.filter { it.status == "RISK" || it.status == "EXPIRED" }
             else -> simCards
         }
     }
