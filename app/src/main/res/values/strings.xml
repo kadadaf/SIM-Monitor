@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">SIM Monitor</string>
+    <string name="widget_name">SIM Monitor Compact</string>
+    <string name="widget_description">Shows simplified carrier and status info.</string>
 </resources>

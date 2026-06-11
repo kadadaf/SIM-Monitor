@@ -91,6 +91,8 @@ dependencies {
   implementation(libs.androidx.room.ktx)
   implementation(libs.androidx.room.runtime)
   implementation("androidx.work:work-runtime-ktx:2.9.0")
+  implementation(libs.androidx.glance.appwidget)
+  implementation(libs.androidx.glance.material3)
   // implementation(libs.coil.compose)
   implementation(libs.converter.moshi)
   // implementation(libs.firebase.ai)

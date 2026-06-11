@@ -88,6 +88,9 @@ roborazzi-junit-rule = { group = "io.github.takahirom.roborazzi", name = "robora
 firebase-bom = { group = "com.google.firebase", name = "firebase-bom", version.ref = "firebaseBom" }
 firebase-ai = { group = "com.google.firebase", name = "firebase-ai" }
 
+androidx-glance-appwidget = { group = "androidx.glance", name = "glance-appwidget", version = "1.1.0" }
+androidx-glance-material3 = { group = "androidx.glance", name = "glance-material3", version = "1.1.0" }
+
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
